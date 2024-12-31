@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/popup.css">
+    <title>Bookmark Manager</title>
+</head>
+<body>
+    <div id="popup-container">
+        <!-- Add this inside the #top-bar div -->
+        <div id="search-tabs">
+            <div class="tab" id="tab-folders" data-i18n="tabFolders"></div>
+            <div class="tab" id="tab-bookmarks" data-i18n="tabBookmarks"></div>
+        </div>
+        <div id="top-bar">
+            <input type="text" id="search" >
+            <img id="add-folder-icon" src="images/add.png" class="add-icon" alt="Add Folder">
+        </div>
+        <div id="folders-container"></div>
+        <div id="bookmarks-container"></div>
+    </div>
+    <script src="static/popup.js"></script>
+</body>
+</html>

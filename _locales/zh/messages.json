@@ -1,0 +1,20 @@
+{
+    "confirmDelete": {
+        "message": "您确定要删除此项目吗？此操作无法撤销。"
+    },
+    "infoMessage": {
+        "message": "您可以在Chrome设置中手动禁用默认书签栏。"
+    },
+    "success": {
+        "message": "文件夹创建成功！"
+    },
+    "searchPlaceholder": {
+        "message": "您可以在Chrome设置中手动禁用默认书签栏"
+    },
+    "tabFolders": {
+        "message": "文件夹"
+    },
+    "tabBookmarks": {
+        "message": "书签"
+    }
+}

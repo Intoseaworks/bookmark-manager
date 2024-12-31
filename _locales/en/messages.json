@@ -1,0 +1,20 @@
+{
+    "confirmDelete": {
+        "message": "Are you sure you want to delete this item? This action cannot be undone."
+    },
+    "infoMessage": {
+        "message": "You can manually disable the default bookmarks bar in settings."
+    },
+    "success": {
+        "message": "Folder created successfully!"
+    },
+    "searchPlaceholder": {
+        "message": "You can manually disable the default bookmark bar in settings"
+    },
+    "tabFolders": {
+        "message": "Folders"
+    },
+    "tabBookmarks": {
+        "message": "Bookmarks"
+    }
+}

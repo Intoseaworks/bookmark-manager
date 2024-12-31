@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Bookmark Manager",
+    "version": "1.0.1",
+    "description": "Manage bookmarks in a pop-up window.",
+    "permissions": ["bookmarks"],
+    "action": {
+        "default_icon": "images/icon16.png",
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+   },
+    "background": {
+      "service_worker": "static/background.js"
+    },
+    "default_locale": "en"
+  }

@@ -1,0 +1,275 @@
+/*
+ * Compatibility Notice
+ *
+ * This software is designed to be compatible with the following environments:
+ * - Browsers: Google Chrome, Mozilla Firefox, Microsoft Edge, Safari
+ * - Platforms: Windows, macOS, Linux
+ * - JavaScript Versions: ES5, ES6+
+ *
+ * While efforts have been made to ensure compatibility across these environments,
+ * users may encounter issues due to differences in browser implementations or
+ * platform-specific behaviors. It is recommended to test the software in your
+ * specific environment to ensure full compatibility.
+ *
+ * For any compatibility issues or questions, please contact [Your Contact Information].
+ */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#popup-container {
+    width: 800px;
+    height: 500px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    padding: 20px;
+    position: relative;
+}
+
+#top-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#search {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+#folders-container, #bookmarks-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.folder, .bookmark {
+    margin: 5px;
+    padding: 5px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1 1 calc(20% - 10px);
+    text-align: center;
+    position: relative;
+    min-width: 80px;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.folder:hover, .bookmark:hover {
+    background-color: #d0d0d0;
+}
+
+img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+}
+
+.edit-icon, .delete-icon, .move-icon, .tick-icon {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+.edit-icon {
+    top: 5px;
+    right: 5px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.edit-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.delete-icon {
+    bottom: -2px;
+    right: 5px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.delete-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.move-icon {
+    bottom: -3px;
+    left: 5px;
+}
+
+.tick-icon {
+    top: 5px;
+    right: 5px;
+}
+
+input[type="text"], textarea {
+    width: calc(100% - 30px);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: none;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+textarea {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.add-icon {
+    width: 24px;
+    height: 24px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.folder {
+    position: relative;
+}
+
+.folder > .edit-icon {
+    top: 5px;
+    right: 5px;
+    width: 12px;
+    height: 12px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.folder > .edit-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.bookmark {
+    margin: 5px;
+    padding: 5px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.bookmark-title {
+    flex-grow: 1;
+    max-width: calc(100% - 50px);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    padding-right: 5px;
+}
+
+.bookmark .edit-icon, .bookmark .delete-icon {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    cursor: pointer;
+}
+
+.bookmark .edit-icon:hover, .bookmark .delete-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.bookmark textarea {
+    width: calc(100% - 50px);
+    height: auto;
+    resize: none;
+    overflow: hidden;
+    margin-right: 5px;
+}
+
+.edit-icon, .delete-icon, .move-icon, .folder > .edit-icon, .bookmark .edit-icon, .bookmark .delete-icon {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.edit-icon:hover, .delete-icon:hover, .move-icon:hover, .folder > .edit-icon:hover, .bookmark .edit-icon:hover, .bookmark .delete-icon:hover {
+    transform: scale(1.5);
+    filter: brightness(1.5);
+}
+
+.move-dialog {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+    width: 300px;
+}
+
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dialog-content h3 {
+    margin: 0 0 10px 0;
+}
+
+.dialog-content select {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.dialog-content button {
+    margin-right: 5px;
+}
+
+.success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    z-index: 1000;
+}
+
+#search-tabs {
+    display: flex;
+    gap: 0;
+    margin-right: 10px;
+}
+
+.tab {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.tab.active {
+    background-color: #d0d0d0;
+    font-weight: bold;
+    border-bottom: none;
+}
